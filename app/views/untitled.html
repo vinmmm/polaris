@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+	<html ng-app="polarisApp">
+	<head>
+		
+		<title>Angular $broadcast</title>
+
+		<style>
+
+		span {
+        padding: 3px;
+        border: 3px ridge;
+        cursor: pointer;
+        width: 100px;
+        display: inline-block;
+        font: bold 18px/22px Georgia;
+        text-align: center;
+        color: white;
+        background-color: blue;
+    }
+    label {
+        padding: 2px;
+        margin: 5px 10px;
+        font: 15px bold;
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+    }
+    .lList {
+        vertical-align: top;
+        display: inline-block;
+        width: 130px;
+    }
+    .cInfo {
+        display: inline-block;
+        width: 175px;
+        border: 3px blue ridge;
+        padding: 3px;
+    }
+			
+		</style>
+		
+	</head>
+	<body>
+
+		<div ng-app="polarisApp">
+<h2>Custom Events in Nested Controllers</h2>
+
+<div ng-controller="Characters">
+    <div class="lList"> <span ng-repeat="name in names" ng-click="changeName()">{{name}}</span>
+
+    </div>
+    <div class="cInfo">
+        <div ng-controller="Character">
+            <label>Name:</label>{{currentName}}
+            <br>
+            <label>Race:</label>{{currentInfo.race}}
+            <br>
+            <label>Weapon:</label>{{currentInfo.weapon}}
+            <br> <span ng-click="deleteChar()">Delete</span>
+
+        </div>
+    </div>
+    </div>
+		<script src="http://code.angularjs.org/1.3.0/angular.min.js"></script>
+		<script>
+
+		angular.module('polarisApp', [])
+    .controller('Characters', function ($scope) {
+    $scope.names = ['Frodo', 'Aragon', 'Legolas', 'Gimli'];
+    $scope.currentName = $scope.names[0];
+    $scope.changeName = function () {
+        $scope.currentName = this.name;
+        $scope.$broadcast('CharacterChanged', this.name);
+    };
+    $scope.$on('CharacterDeleted', function (event, removeName) {
+        var i = $scope.names.indexOf(removeName);
+        $scope.names.splice(i, 1);
+        $scope.currentName = $scope.names[0];
+        $scope.$broadcast('CharacterChanged', $scope.currentName);
+
+    });
+})
+    .controller('Character', function ($scope) {
+    $scope.info = {
+        'Frodo': {
+            weapon: 'Sting',
+            race: 'Hobbit'
+        },
+            'Aragon': {
+            weapon: 'Sword',
+            race: 'Man'
+        },
+            'Legolas': {
+            weapon: 'Bow',
+            race: 'Elf'
+        },
+            'Gimli': {
+            weapon: 'Axe',
+            race: 'Dwarf'
+        }
+    };
+    $scope.currentInfo = $scope.info['Frodo'];
+    $scope.$on('CharacterChanged', function (event, newCharacter) {
+        $scope.currentInfo = $scope.info[newCharacter];
+    });
+    $scope.deleteChar = function () {
+        delete $scope.info[$scope.currentName];
+        $scope.$emit('CharacterDeleted', $scope.currentName);
+    };
+});
+	</script>
+	</body>
+	</html>	

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script src="http:////cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body ng-controller="StoreController as store">
+    <div ng-hide="store.product.soldOut" class="product row">
+      <h3>
+        {{store.product.name}}
+
+        
+        <em class="pull-right">{{store.product.price}}</em>
+
+        <button ng-show="store.product.canPurchase">Add To Cart</button>
+      </h3>
+    </div>
+
+    <script>
+(function(){
+  var gem = { name: 'Azurite',
+              price: 2.95,
+              canPurchase: true,
+              soldOut: false,
+               };
+  var app = angular.module('gemStore', []);
+  app.controller('StoreController', function(){
+    this.product = gem;
+    
+  });
+})();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+	<html ng-app>
+	<head>
+		
+		<title>Angular Tarot</title>
+        <script src="angular1.3.15.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js"></script>
+
+		<style>
+        body {
+            margin-left: 23px;
+        }
+    .container {
+        background-color: #d7d6d6;
+        color: red;
+        padding: 0px 0px 3px 9px;
+    }
+	span {
+        padding: 3px;
+        border: 3px ridge;
+        cursor: pointer;
+        width: 100px;
+        display: inline-block;
+        font: bold 18px/22px Georgia;
+        text-align: center;
+        color: white;
+        background-color: #e27b7b;
+    }
+    label {
+        padding: 2px;
+        margin: 5px 10px;
+        font: 15px bold;
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+    }
+    .lList {
+        vertical-align: top;
+        display: inline-block;
+        width: 190px;
+    }
+    .cInfo {
+        display: inline-block;
+        width: 275px;
+        border: 3px #f1d6a3 ridge;
+        padding: 3px;
+    }
+			
+		</style>
+		
+	</head>
+	<body>
+        <div class="container">
+            <input type="checkbox" ng-model="checked">
+            <p ng-show="checked">Osiris, Isis, Thoth</p>
+        
+        </div>
+
+        <h1>Ng-show & ng-hide</h1>
+  <p class="description">Click on the "show"-link to see the content.</p>
+  <a href="" ng-click="showme=true">Show</a>
+  <button ng-click="showme=false">Hide</button> 
+  
+  <div class="wrapper">
+    <p ng-hide="showme">It will appear here!</p>
+    <h2 ng-show="showme">This is mah content, yo!</h2>
+  </div>
+
+<!--The Fool-->
+<div>
+    <h3>The Fool</h3>
+    <ul>
+        <li>Is the main person</li>
+        <li>The Person being read</li>
+        <li>The person traveling through the Arcana</li>
+    </ul>
+    
+</div>
+
+<!--Masculine Arcana-->
+  <div>
+<h3>Masculine Arcana, Doing</h3>
+    <ul>
+        <li>Magician <i>The Magician is the First Trump of The Major Arcana</i> (French <i>Le Bateleur).</i></li>
+        <li>Is One who is on the masculine path of doing.</li>
+        <li>His journey is the is the day arch in the 24 hour circle</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </ul>
+      
+  </div>
+
+<!--Feminine Arcana-->
+   <div>
+    <h3>Feminine Arcana, Being</h3>
+
+    <ul>
+        <li>The High Priestess <i>The High Priestess is the Second Trump of The Major Arcana</i> (French <i>La Papesse).</i></li>
+        <li>The feminine path of being.</li>
+        <li>Sedate</li>
+        <li>Inwardly focused</li>
+        <li>Holy</li>
+        <li>Devoted to the Spirit</li>
+        <li>Virgin Mary</li>
+        <li>Is on the night arch journey of the 24 hour cycle circle.</li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </ul>
+      
+  </div>
+
+  <div>
+    <ul>
+        <h3>The Wheel of Fortune</h3>
+        <li>Comes at the end of the day, at the end of the masculine arcana. The Magician sees this just before night.</li>
+        <li>This is a transition period in someone's life</li>
+        <li>This can mean crisis.</li>
+        <li>The Wheel of fortune comes after The Hermit Card which is the last card of the masculine path of doing.</li>
+        <li>Is the first step card on the path of being.</li>
+        <li>There are two animals on the wheel. They propel the wheel. they are chasing things they want. Cahsing their dreams</li>
+        <li>A turning point in life</li>
+        <li>Attainment of higher understanding</li>
+        <li>Recognition of the treadmill of doing</li>
+        <li>Seeing the futility of intentional effort</li>
+        <li>Knowing to do nothing and just be</li>
+        <li>figure creature on top of wheeland not moving on the wheel. Seems over life</li>
+        <li></li>
+    </ul>
+      
+  </div>
+
+    <div>
+    <ul>
+        <li>Strength <i>The Strength or Fortitude card is the Second Trump of The Major Arcana</i> (French <i>La Force).</i>This is The Lust card in the Thoth deck</li>
+        
+    </ul>
+      
+  </div>
+  <!-- uppercase filter -->
+<div>
+    <h3>Angular uppercase filter</h3>
+  <input ng-model="msg">
+  {{msg | uppercase}}
+  
+</div>
+
+<div>
+    
+
+
+<h3>ng-repeat FIFA Mactch Summary:</h3>
+<div ng-app ng-controller="MyCtrl">
+    <ul>
+        <li ng-repeat="(country,goals) in items">{{country}}: {{goals}}</li>
+    </ul>
+</div>
+
+</div>
+
+<script>
+var m = {
+    "India": "2",
+    "England": "2",
+    "Brazil": "3",
+    "UK": "1",
+    "USA": "3",
+    "Syria": "2"
+};
+
+function MyCtrl($scope) {
+    $scope.items = m;
+}
+</script>
+	</body>
+	</html>	

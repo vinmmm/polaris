@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+	<html ng-app>
+	<head>
+		
+		<title>Angular ng-hide</title>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+
+		<style>
+    .container {
+        background-color: #d7d6d6;
+        color: red;
+        padding: 0px 0px 3px 9px;
+    }
+	span {
+        padding: 3px;
+        border: 3px ridge;
+        cursor: pointer;
+        width: 100px;
+        display: inline-block;
+        font: bold 18px/22px Georgia;
+        text-align: center;
+        color: white;
+        background-color: #e27b7b;
+    }
+    label {
+        padding: 2px;
+        margin: 5px 10px;
+        font: 15px bold;
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+    }
+    .lList {
+        vertical-align: top;
+        display: inline-block;
+        width: 190px;
+    }
+    .cInfo {
+        display: inline-block;
+        width: 275px;
+        border: 3px #f1d6a3 ridge;
+        padding: 3px;
+    }
+			
+		</style>
+		
+	</head>
+	<body>
+        <div class="container">
+            <input type="checkbox" ng-model="checked">
+            <p ng-show="checked">Osiris, Isis, Thoth</p>
+            <button ng-click="checked"></button>
+        
+        </div>
+
+        <h1>Ng-show & ng-hide</h1>
+  <p class="description">Click on the "show"-link to see the content.</p>
+  <a href="" ng-click="showme=true">Show</a>
+  <button ng-click="showme=false">Hide</button> 
+  
+  <div class="wrapper">
+    <p ng-hide="showme">It will appear here!</p>
+    <h2 ng-show="showme">This is mah content, yo!</h2>
+  </div>
+	</body>
+	</html>	

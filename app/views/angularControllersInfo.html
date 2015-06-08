@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+	<html ng-app>
+	<head>
+		
+		<title>Angular Tarot</title>
+        <script src="angular1.3.15.js"></script>
+
+		<style>
+        body {
+            margin-left: 23px;
+        }
+    .container {
+        background-color: #d7d6d6;
+        color: red;
+        padding: 0px 0px 3px 9px;
+    }
+	span {
+        padding: 3px;
+        border: 3px ridge;
+        cursor: pointer;
+        width: 100px;
+        display: inline-block;
+        font: bold 18px/22px Georgia;
+        text-align: center;
+        color: white;
+        background-color: #e27b7b;
+    }
+    label {
+        padding: 2px;
+        margin: 5px 10px;
+        font: 15px bold;
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+    }
+    .lList {
+        vertical-align: top;
+        display: inline-block;
+        width: 190px;
+    }
+    .cInfo {
+        display: inline-block;
+        width: 275px;
+        border: 3px #f1d6a3 ridge;
+        padding: 3px;
+    }
+			
+		</style>
+		
+	</head>
+	<body>
+        <div class="container">
+            <input type="checkbox" ng-model="checked">
+            <p ng-show="checked">Osiris, Isis, Thoth</p>
+        
+        </div>
+
+        <h1>Ng-show & ng-hide</h1>
+  <p class="description">Click on the "show"-link to see the content.</p>
+  <a href="" ng-click="showme=true">Show</a>
+  <button ng-click="showme=false">Hide</button> 
+  
+  <div class="wrapper">
+    <p ng-hide="showme">It will appear here!</p>
+    <h2 ng-show="showme">This is mah content, yo!</h2>
+  </div>
+
+
+<!--Masculine Arcana-->
+  <div>
+<h3>The ng-model Directive</h3>
+<p>ng-model is used to link values of template elements to the scope. Input, select and textarea are all elements that can get their value from user input. The ng-model directive automatically updates the scope when the user changes the value of the input element.</p>
+    <ul>
+        <li>Magician <i>The Magician is the First Trump of The Major Arcana</i> (French <i>Le Bateleur).</i></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </ul>
+      
+  </div>
+
+<!--Feminine Arcana-->
+   <div>
+    <h3>Feminine Arcana, Being</h3>
+
+    <ul>
+        <li>The High Priestess <i>The High Priestess is the Second Trump of The Major Arcana</i> (French <i>La Papesse).</i></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </ul>
+      
+  </div>
+	</body>
+	</html>	

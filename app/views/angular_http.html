@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+	<html ng-app="myApp">
+	<head>
+		
+		<title>Angular $http</title>
+    </head>    
+    
+    <body>
+
+        <div class="row">
+    <div class="col-md-12" ng-repeat="bobo in bobos">
+        {{bobo.text}}
+        
+    </div>
+    
+</div>
+    
+    
+    <script>
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name joeApp.controller:HoraceCtrl
+ * @description
+ * # HoraceCtrl
+ * Controller of the joeApp
+ */
+angular.module('myApp')
+  .controller('HoraceCtrl', function ($scope, http) {
+    $scope.bobos = [];
+    $http.get('/api/v1/bobo').success(function(data){
+        $scope.bobos = data;
+    });
+   
+  });
+
+    </script>
+
+	</body>
+	</html>	

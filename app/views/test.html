@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+	<html ng-app>
+	<head>
+		
+		<title>Angular Tarot</title>
+        <script src="angular1.3.15.js"></script>
+
+		<style>
+        body {
+            margin-left: 23px;
+        }
+    .container {
+        background-color: #d7d6d6;
+        color: red;
+        padding: 0px 0px 3px 9px;
+    }
+	span {
+        padding: 3px;
+        border: 3px ridge;
+        cursor: pointer;
+        width: 100px;
+        display: inline-block;
+        font: bold 18px/22px Georgia;
+        text-align: center;
+        color: white;
+        background-color: #e27b7b;
+    }
+    label {
+        padding: 2px;
+        margin: 5px 10px;
+        font: 15px bold;
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+    }
+    .lList {
+        vertical-align: top;
+        display: inline-block;
+        width: 190px;
+    }
+    .cInfo {
+        display: inline-block;
+        width: 275px;
+        border: 3px #f1d6a3 ridge;
+        padding: 3px;
+    }
+			
+		</style>
+		
+	</head>
+	<body>
+      <div ng-controller="BlogCtrl">
+        {{blogArticle}}  
+      </div>
+
+      <script>
+      
+var joeApp =
+angular.module('polarisApp', []).controller('BlogCtrl', ['$scope',
+function BlogCtrl($scope) {
+$scope.blogArticle =
+"This is a blog post about AngularJS.
+We will cover how to build a blog and how to add
+comments to the blog post.";
+}]);
+
+      </script>
+	</body>
+	</html>	
