@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html ng-app="myApp">
+	<html ng-app="todoApp">
 	<head>
 		
 		<title>Angular $http</title>
@@ -10,8 +10,8 @@
     <body>
 
         <div class="row">
-    <div class="col-md-12" ng-repeat="bobo in bobos">
-        {{bobo.text}}
+    <div class="col-md-12" ng-repeat="todo in todos">
+        {{todo.text}}
         
     </div>
     
@@ -28,11 +28,11 @@
  * # HoraceCtrl
  * Controller of the joeApp
  */
-angular.module('myApp')
-  .controller('HoraceCtrl', function ($scope, http) {
-    $scope.bobos = [];
-    $http.get('/api/v1/bobo').success(function(data){
-        $scope.bobos = data;
+angular.module('todoApp')
+  .controller('MainCtrl', function ($scope,http) {
+    $scope.todos = [];
+    $http.get('/api/v1/todo').success(function (data){
+        $scope.todos = data;
     });
    
   });

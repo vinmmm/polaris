@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+	<html ng-app="polarisApp">
+	<head>
+		
+		<title>Angular $broadcast</title>
+
+		<style>
+    .container {
+        background-color: #d7d6d6;
+        color: red;
+        padding: 0px 0px 3px 9px;
+    }
+	span {
+        padding: 3px;
+        border: 3px ridge;
+        cursor: pointer;
+        width: 100px;
+        display: inline-block;
+        font: bold 18px/22px Georgia;
+        text-align: center;
+        color: white;
+        background-color: #e27b7b;
+    }
+    label {
+        padding: 2px;
+        margin: 5px 10px;
+        font: 15px bold;
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+    }
+    .lList {
+        vertical-align: top;
+        display: inline-block;
+        width: 190px;
+    }
+    .cInfo {
+        display: inline-block;
+        width: 275px;
+        border: 3px #f1d6a3 ridge;
+        padding: 3px;
+    }
+			
+		</style>
+		
+	</head>
+<body>
+    <div class="container">
+            
+        
+
+		<div ng-app="polarisApp">
+         <h1>Form</h1>
+
+         <form ng-submit="addCust.submit()"
+ng-controller="AddCustomerCtrl as addCust">
+<div>
+<input type="text" ng-model="addCust.cName" required/>
+</div>
+<div>
+<input type="text" ng-model="addCust.cCity" required/>
+</div>
+<div>
+<button id="f1" type="submit" >Add Customer</button>
+</div>
+</form>
+
+
+
+        </div>
+    
+    </div>
+   
+		<script src="http://code.angularjs.org/1.3.0/angular.min.js"></script>
+        <script src="angular.js"></script>
+
+        <script>
+/* chapter4/app.js */
+/* App Module */
+var helloWorldApp = angular.module('helloWorldApp', [
+'ngRoute',
+'helloWorldControllers'
+]);
+helloWorldApp.config(['$routeProvider', '$locationProvider',
+function($routeProvider, $locationProvider) {
+$routeProvider.
+when('/', {
+templateUrl: 'partials/main.html',
+controller: 'MainCtrl'
+}).when('/show', {
+templateUrl: 'partials/show.html',
+controller: 'ShowCtrl'
+}).when('/customer', {
+templateUrl: 'partials/customer.html',
+controller: 'CustomerCtrl'
+}).when('/addCustomer', {
+templateUrl: 'partials/newCustomer.html',
+controller: 'AddCustomerCtrl'
+}).when('/addedCustomer/:customer/:city', {
+templateUrl: 'partials/addedCustomer.html',
+controller: 'AddedCustomerCtrl'
+});
+$locationProvider.html5Mode(false).hashPrefix('!');
+}]);
+
+        </script>
+
+        <script>
+
+angular.module('polarisApp', [])
+        .controller('AddCustomerCtrl',
+['$scope', '$location',
+function AddCustomerCtrl($scope, $location) {
+$scope.submit = function(){
+$location.path('/addedCustomer/' + $scope.cName + "/" + $scope.cCity);
+};
+}]);
+        </script>
+		
+	</body>
+	</html>	

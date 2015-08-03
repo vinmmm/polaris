@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+	<html ng-app="polarisApp">
+	<head>
+		
+		<title>Angular $broadcast</title>
+
+		<style>
+    
+    .even {
+    background-color: lightgrey;
+}
+.rect {
+    display: inline-block; 
+    height: 40px;
+    width: 100px;
+}
+			
+		</style>
+		
+	</head>
+<body>
+  
+         <h1>anubis</h1>
+ <div ng-controller="AnubisCtrl">
+
+<h2>data binding directives</h2>
+    <label ng-repeat="color in colors">
+     {{color}}
+     <input type="radio" ng-model="myStyle ['background-color']" ng-value="color" id="{{color}}" name="mColor">
+
+    </label>
+
+    <span class="rect" ng-style="myStyle"></span><hr>
+    <li ng-repeat="day in days">
+    <span  ng-class-even="'even'">{{day}}</span>
+</li><hr>
+Show Message: <input type="checkbox" ng-model="checked"/>
+<p ng-if="checked" ng-bind="msg"></p>
+    
+</div>
+
+
+
+
+   
+		<script src="http://code.angularjs.org/1.3.0/angular.min.js"></script>
+        <script src="angular.js"></script>
+       
+        <script>
+angular.module('polarisApp', [])
+  .controller('AnubisCtrl', function ($scope) {
+        $scope.colors = ['red', 'green', 'blue'];
+        $scope.myStyle = { "background-color": 'blue'};
+        $scope.days = ['Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday'];
+        $scope.msg = "Dynamic Message from the model";
+  });
+
+    </script>
+
+
+		
+	</body>
+	</html>	

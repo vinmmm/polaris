@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+	<html ng-app="polarisApp">
+	<head>
+		
+		<title>Consulting</title>
+
+		<style>
+    .container {
+        background-color: #d7d6d6;
+        color: red;
+        padding: 0px 0px 3px 9px;
+    }
+	span {
+        padding: 3px;
+        border: 3px ridge;
+        cursor: pointer;
+        width: 100px;
+        display: inline-block;
+        font: bold 18px/22px Georgia;
+        text-align: center;
+        color: white;
+        background-color: #e27b7b;
+    }
+    label {
+        padding: 2px;
+        margin: 5px 10px;
+        font: 15px bold;
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+    }
+    .lList {
+        vertical-align: top;
+        display: inline-block;
+        width: 190px;
+    }
+    .cInfo {
+        display: inline-block;
+        width: 275px;
+        border: 3px #f1d6a3 ridge;
+        padding: 3px;
+    }
+			
+		</style>
+		
+	</head>
+	<body>
+        <div class="container">
+            <h3>Consulting</h3>
+            <h5>Web Framworks vs Javascript MVC</h5>
+<p>Web Framworks, Option 1</p>
+            <ul>
+                <li>Conventional web frameworks often tolerate server-side page scripting using PHP, Active
+Server Pages (ASP), and Java Server Pages (JSP). While server-side page scripting works
+sufficiently well on the server side, it does pose many maintenance issues for developers.
+But that is not the biggest issue with conventional web frameworks. Conventional web
+frameworks tend to run slower and be sluggish on mobile devices.
+</li>
+<li>Web applications and sites built with Ruby on Rails, the Zend Framework, Spring MVC,
+CakePHP, and other web frameworks are based on this design.
+</li>
+<li>Consider, for example, a doctor’s office that needs to allow patients to make appointments
+from their mobile devices. Such an application would need to be fast and have almost no
+delay when patients are navigating from page to page. The application would also need to
+look good on any device. A user with a small smartphone should have the same user
+experience as a user with a 10-inch tablet.
+</li>
+<li>
+    <h3>Option 2</h3>
+    Choice Two
+The second option would require the developer to write a native or HTML5 mobile
+application that called web services on the backend for business functions. This approach
+would require adding REST web services to the existing web application to make use of
+existing business logic. Option two is, in effect, a complete rewrite of the application.
+Adding REST services to the existing web application would not be a trivial matter.
+Option two would, however, offer the best application design and would provide the best
+user experience.
+The design shown in Figure 3-1 isn’t directly transferable to mobile devices. Fifteen years
+ago, when mobile devices were not in heavy use, that design was a common choice for
+application developers and architects, and posed few problems. Mobile device sales
+reached an all-time high in 2014, however, and most analysts predict that trend will only
+increase in the coming years.
+Mobile is the future of everything. As wireless systems improve and evolve, mobile
+devices will evolve too and play a major role in all our daily activities. A mobile device
+will alert you when your table is ready at your favorite restaurant. That same device will
+replace your debit card or credit card when it’s time to pay the bill and tip the server.
+So, developers must plan for the future now. It’s time to stop building software based on
+an old and outdated technology. That’s where JavaScript client-side frameworks come into
+play, and that’s where AngularJS shines the brightest of all the JavaScript frameworks
+available. AngularJS is a solid foundation for building scalable applications that run well
+on desktops and a broad array of mobile devices, with few if any modifications needed for
+each platform.
+www
+</li>
+
+<h3>Option 3, a new and better way</h3>
+A New and Better Way
+AngularJS is a JavaScript MVC framework that cuts development time for both web
+applications and mobile applications that run on multiple device platforms. Figure 3-3
+shows a diagram of an AngularJS application that uses business logic that’s exposed
+through REST web services. The REST services can run anywhere and be written in any
+programming language. Two popular frameworks used to build REST services are the
+Spring framework, written in Java, and ExpressJS for Node.js.
+<li>
+    the entire AngularJS application runs on
+the user’s hardware, in the user’s web browser. That may be a desktop browser or the
+browser of a mobile device. With this design we shift the display logic from the server to
+the user’s hardware, resulting in a much better user experience. The application runs faster
+and is much more responsive — more like a thick-client or native application than a
+browser-based application.
+AngularJS applications harness the power of the user’s hardware. The approach that’s
+taken frees the server or servers to handle nothing but business logic and data access.
+Using REST services that send and receive JSON helps to greatly simplify AngularJS
+applications: JSON is a data-interchange format for REST services that is easy to read and
+understand.
+Figure 3-4 shows the same AngularJS application deployed as part of an Android
+application. The JavaScript, CSS3, and HTML5 code is all the same regardless of where
+the application is deployed. If the application was designed from a mobile-first
+perspective, it should look great and run well on any platform.
+www.it-
+</li>
+            </ul>
+
+            <h1>MEAN Stack</h1>
+            <div>
+
+                <ul>
+                    <li>Mongo DB</li>
+                    <p>Nosql document db</p>
+                    <p>has dynamic schema</p>
+                    <p>no tables and relationships to define before you put data. you can just add data first. Will be dored in a binary json format</p>
+                    <p>agragation pipeline, it has?</p>
+                    <li></li>
+                </ul>
+                
+            </div>
+            
+        
+
+		<div ng-app="polarisApp">
+<h1>The Other Guys</h1>
+<h3>Custom Events in Nested Controllers</h3>
+<h5>Using $broadcast, $emit and $on</h5>
+<div ng-controller="Characters">
+    <div class="lList"> <span ng-repeat="name in names" ng-click="changeName()">{{name}}</span>
+
+    </div>
+    <div class="cInfo">
+        <div ng-controller="Character">
+            <label>Name:</label>{{currentName}}
+            <br>
+            <label>Job:</label>{{currentInfo.job}}
+            <br>
+            <label>Weapon:</label>{{currentInfo.weapon}}
+            <br> <span ng-click="deleteChar()">Delete</span>
+
+        </div>
+    </div>
+    </div>
+    </div>
+		<script src="http://code.angularjs.org/1.3.0/angular.min.js"></script>
+        <script src="angular.js"></script>
+		<script>
+
+		angular.module('polarisApp', [])
+    .controller('Characters', function ($scope) {
+    $scope.names = ['Alan', 'Terry', 'Gene', 'Sheila', 'Danson', 'Highsmith', 'Bob'];
+    $scope.currentName = $scope.names[0];
+    $scope.changeName = function () {
+        $scope.currentName = this.name;
+        $scope.$broadcast('CharacterChanged', this.name);
+    };
+    $scope.$on('CharacterDeleted', function (event, removeName) {
+        var i = $scope.names.indexOf(removeName);
+        $scope.names.splice(i, 1);
+        $scope.currentName = $scope.names[0];
+        $scope.$broadcast('CharacterChanged', $scope.currentName);
+
+    });
+})
+    .controller('Character', function ($scope) {
+    $scope.info = {
+        'Alan': {
+            weapon: 'Calculator',
+            job: 'Police Officer'
+        },
+            'Terry': {
+            weapon: 'Gun',
+            job: 'Police Officer'
+        },
+            'Gene': {
+            weapon: 'None',
+            job: 'Police Captain'
+        },
+            'Sheila': {
+            weapon: 'None',
+            job: 'M D'
+        },
+            'Danson': {
+            weapon: 'Gun',
+            job: 'Police Detective'
+        },
+            'Highsmith': {
+            weapon: 'Gun',
+            job: 'Police Detective'
+        },
+            'Bob': {
+            weapon: 'None',
+            job: 'Police Accountant'
+        }      
+    };
+    $scope.currentInfo = $scope.info['Alan'];
+    $scope.$on('CharacterChanged', function (event, newCharacter) {
+        $scope.currentInfo = $scope.info[newCharacter];
+    });
+    $scope.deleteChar = function () {
+        delete $scope.info[$scope.currentName];
+        $scope.$emit('CharacterDeleted', $scope.currentName);
+    };
+});
+	</script>
+	</body>
+	</html>	

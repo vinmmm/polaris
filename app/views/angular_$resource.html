@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script src="http:////cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+ <body>
+   
+
+<div>
+  
+</div>
+
+
+
+
+
+
+
+    <script>
+/* chapter6/services.js */
+'use strict';
+/* Services */
+var blogServices =
+angular.module('blogServices', ['ngResource']);
+blogServices.factory('BlogPost', ['$resource',
+function($resource) {
+return $resource("http://www.micbutton.com/rs/blogPost", {}, {
+get: {method: 'GET', cache: false, isArray: false},
+save: {method: 'POST', cache: false, isArray: false},
+update: {method: 'PUT', cache: false, isArray: false},
+delete: {method: 'DELETE', cache: false, isArray: false}
+});
+}]);
+Using
+
+    </script>
+  </body>
+</html>
